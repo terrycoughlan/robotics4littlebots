@@ -1,9 +1,6 @@
-# BCS
-Business Continuity Services
+# Robotics4LittleBots
 
 **How to install and run**
-
-Clone project **make sure you add your pub shh key to github**
 
 _**npm install**_
 
