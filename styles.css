@@ -1,0 +1,84 @@
+/* app css stylesheet */
+
+/*body {*/
+
+  /*background-image: url("app/assets/images/BG-rob2.jpg");*/
+  /*background-repeat: no-repeat;*/
+  /*background-size: 100% 100%;*/
+  /*!*background-color: #cccccc;*!*/
+/*}*/
+
+body {
+  font-family: "Lato","Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-size: 15px;
+  line-height: 1.42857143;
+  color: #2b3e50;
+  background-color: lightgray;
+  background-image: url("app/assets/images/BGlgRob5.jpg");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  /*!*background-color: #cccccc;*!*/
+}
+
+.row {
+  margin-left: 160px;
+  /*margin-right: -15px;*/
+  /*margin: auto;*/
+  /*padding-left: 5%;*/
+}
+
+.hoverwell {
+  background-color: whitesmoke;
+  opacity: 0.9;
+  cursor: pointer;
+}
+
+.hoverwell:hover {
+  background-color: lightblue;
+  opacity: 0.6;
+  color: #000000;
+  cursor: pointer;
+}
+
+.hoverwell2 {
+  background-color: whitesmoke;
+  opacity: 0.9;
+  cursor: pointer;
+}
+
+.container {
+  padding-top: 10px;
+}
+
+h2, .h2 {
+  font-size: 28px;
+}
+
+.pointable {
+  cursor: pointer;
+}
+
+.navbar-image {
+  height: 40px;
+}
+
+button {
+  color: #555;
+}
+
+[hidden] {
+  display: none !important;
+}
+
+.toast-success {
+  background-color: #51a351;
+}
+.toast-error {
+  background-color: #bd362f;
+}
+.toast-info {
+  background-color: #2f96b4;
+}
+.toast-warning {
+  background-color: #f89406;
+}

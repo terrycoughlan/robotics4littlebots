@@ -1,0 +1,56 @@
+<h1>New Inventory</h1>
+<hr>
+<div class="col-md-6">
+    <form #newInventoryForm="ngForm" (ngSubmit)="saveInventory(newInventoryForm.value)" autocomplete="off" novalidate>
+        <div class="form-group" [ngClass]="{'error': newInventoryForm.controls.name?.invalid && newInventoryForm.controls.name?.touched}">
+            <label for="inventoryName">Event Name:</label>
+            <em *ngIf="newInventoryForm.controls.name?.invalid && (newInventoryForm.controls.name?.touched)">Required</em>
+            <input (ngModel)="name" name="name" required id="inventoryName" type="text" class="form-control" placeholder="Name of your inventory..." />
+        </div>
+        <div class="form-group" [ngClass]="{'error': newInventoryForm.controls.date?.invalid && newInventoryForm.controls.date?.touched}">
+            <label for="inventoryDate">Event Date:</label>
+            <em *ngIf="newInventoryForm.controls.date?.invalid && (newInventoryForm.controls.date?.touched)">Required</em>
+            <input (ngModel)="date" name="date" required id="inventoryDate" type="text" class="form-control" placeholder="format (mm/dd/yyyy)..." />
+        </div>
+        <div class="form-group" [ngClass]="{'error': newInventoryForm.controls.time?.invalid && newInventoryForm.controls.time?.touched}">
+            <label for="inventoryTime">Event Time:</label>
+            <em *ngIf="newInventoryForm.controls.time?.invalid && (newInventoryForm.controls.time?.touched)">Required</em>
+            <input (ngModel)="time" name="time" required id="inventoryTime" type="text" class="form-control" placeholder="start and end time..." />
+        </div>
+        <div class="form-group" [ngClass]="{'error': newInventoryForm.controls.price?.invalid && newInventoryForm.controls.price?.touched}">
+            <label for="inventoryPrice">Event Price:</label>
+            <em *ngIf="newInventoryForm.controls.price?.invalid && (newInventoryForm.controls.price?.touched)">Required</em>
+            <input (ngModel)="price" name="price" required id="inventoryPrice" type="text" type="number" class="form-control" placeholder="inventory price..." />
+        </div>
+
+        <div ngModelGroup="location">
+            <div class="form-group">
+                <label for="address">Event Location:</label>
+                <input (ngModel)="address" name="address" id="address" type="text" class="form-control" placeholder="Address of inventory..." />
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <input (ngModel)="city" name="city" id="city" type="text" class="form-control" placeholder="City..." />
+                </div>
+                <div class="col-md-6" >
+                    <input (ngModel)="country" name="country" id="country" type="text" class="form-control" placeholder="Country..." />
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="onlineUrl">Online Url:</label>
+            <input (ngModel)="onlineUrl" name="onlineUrl" id="onlineUrl" type="text" class="form-control" placeholder="Online Url..." />
+        </div>
+        <div class="form-group" [ngClass]="{'error': newInventoryForm.controls.imageUrl?.invalid && newInventoryForm.controls.imageUrl?.touched}">
+            <label for="imageUrl">Image:</label>
+            <em *ngIf="newInventoryForm.controls.imageUrl?.invalid && newInventoryForm.controls.imageUrl?.touched && newInventoryForm.controls.imageUrl?.errors.required">Required</em>
+            <em *ngIf="newInventoryForm.controls.imageUrl?.invalid && newInventoryForm.controls.imageUrl?.touched  && newInventoryForm.controls.imageUrl?.errors.pattern">Must be a png or jpg url</em>
+            <input (ngModel)="imageUrl" name="imageUrl" required pattern=".*\/.*.(png|jpg)" id="imageUrl" type="text" class="form-control" placeholder="url of image..." />
+            <img [src]="newInventoryForm.controls.imageUrl.value" *ngIf="newInventoryForm.controls.imageUrl?.valid"/>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Save</button>
+        <button type="button" [disabled]="newInventoryForm.invalid" class="btn btn-default" (click)="cancel()">Cancel</button>
+    </form>
+</div>
